@@ -23,7 +23,7 @@ M. Hanai, et.al. *"Distributed Edge Partitioning for Trillion-edge Graphs"* (PVL
 
 ```bash
 $ git clone git@github.com:masatoshihanai/DistributedNE.git
-$ cd DistributedNE; $ mkdir build; cd build;
+$ cd DistributedNE; mkdir build; cd build;
 $ 
 ```
 
