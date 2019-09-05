@@ -6,7 +6,7 @@ __*Distributed Neighbor Expansion (Distributed NE)*__ : A scalable parallel and 
 - __Provide high-quality edge partitionins__
 - __Scalablable to trillion-edge graphs on 200+ machines__
 
-The algorithm is based on  _parallel expansion_, where the edge parts are greedily expanded in parallel in such way that the increase of vertex-cuts in each part becomes the local minimum as the figure. 
+The algorithm is based on  _parallel expansion_, where the edge parts are greedily expanded in parallel in such a way that the increase of vertex-cuts in each part becomes the local minimum. 
 
 ![expansion](pics/ParallelExpansion.png)
 
@@ -25,14 +25,13 @@ $ cmake ..; make
 $ mpirun -n 4 ./DistributedNE ../data/LJ.edges 4
 ```
 
-
-
 ## Outline of the Page
 
 1. [__How to compile__](#compile)
-2. [__How to Run__](#run)
-3. [__Graph Data format__](#data)
-4. [__Acknowledgement / Contact__](#ack)
+2. [__How to run__](#run)
+3. [__Graph data format__](#data)
+4. [__Related tools__](#related)
+5. [__Acknowledgement / Contact__](#ack)
 
 ---
 
@@ -42,18 +41,18 @@ First, prepare the standard development tools for C/C++ on MPI
 
 __Requirements__: `MPI` `C++`  `Make` `CMake` `Git`
 
-- __MPI__ : [OpenMPI](https://www.open-mpi.org/) , [MPICH](https://www.mpich.org/)
-- __C++ compiler__: [GCC](https://gcc.gnu.org/install/), [IntelC++](https://software.intel.com/en-us/c-compilers), [Clang/LLVM](https://clang.llvm.org/index.html)
+- __MPI__ : [OpenMPI](https://www.open-mpi.org/) , [MPICH](https://www.mpich.org/), or etc.
+- __C++ compiler__: [GCC](https://gcc.gnu.org/install/), [IntelC++](https://software.intel.com/en-us/c-compilers), [Clang/LLVM](https://clang.llvm.org/index.html), or etc.
 - [Make](https://www.gnu.org/software/make/), [CMake](https://cmake.org/), [Git](https://git-scm.com/)
 
-Next, get the code from github.
+Next, get the code from github
 
 ```bash
 ### get the code from git repository
 $ git clone git@github.com:masatoshihanai/DistributedNE.git
 ```
 
-Build via CMake
+Configure and compile
 
 ```bash
 ### make new build directory
@@ -68,15 +67,15 @@ $ cmake ..
 $ make
 ```
 
-We have successed to compile & run the program in these environments:
+We have successed to compile and run the program in these environments:
 
 ##### Tested Environments
 
-- MPI:  `Intel MPI 5.1.2`
-- Compiler: `GCC 5.4`
-- OS: `Red Hat Server 6.9`
+- MPI:  `OpenMPI 2.1` `OpenMPI 4.0` `Intel MPI 5.1`
+- Compiler: `GCC 4.9` `GCC 5.4` `GCC 7.4`
+- OS: `Red Hat Server 6.9` `Ubuntu 18.04`
 
-### 2. How to Run Tools {#run}
+### 2. How to run {#run}
 
 ```bash
 $
@@ -84,15 +83,35 @@ $
 
 
 
-### 3. Supported data format {#data}
+### 3. Graph data format {#data}
 
-``` bash
-$
-```
+Distributed NE supports the de-facto standard __edge-list format__ by [SNAP](https://snap.stanford.edu/data/index.html),  where each line represents one directed edge (source id and destination id).
+
+For example, <img src="pics/Graph.png" alt="Graph" style="zoom:50%;" />is  represented as follows:
+
+ ```bash
+# src dst
+0    1
+1    0
+1    2
+1    3
+2    1
+3    2
+ ```
 
 
 
-### 4. Acknowledgement {#ack}
+### 4. Related tools {#related}
+
+>_PowerGraph_ - Edge-partitioned distributed graph processing system ([Code](https://github.com/jegonzal/PowerGraph))
+>
+>_GraphX_ - Spark-based Edge-partitioned distributed graph processing system ([Code](https://spark.apache.org/graphx/))
+>
+>_NE_ - Graph edge partitioner based on sequential neighbor expansion ([Code](https://www.kdd.org/kdd2017/papers/view/graph-edge-partitioning-via-neighborhood-heuristic)) 
+>
+>_METIS_ - Standart vertex patitoining tools ([Code](http://glaros.dtc.umn.edu/gkhome/metis/metis/overview))
+
+### 5. Acknowledgement {#ack}
 
 ![SUStech](pics/sustech.png)  ![IBM](pics/IBM.png) ![NTU](pics/NTU.png) 
 
