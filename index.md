@@ -26,6 +26,8 @@ $ cmake ..; make
 $ mpirun -n 4 ./DistributedNE ../data/LJ.edges 4
 ```
 
+---
+
 ### How to compile
 
 First, prepare the standard development tools for C/C++ on MPI
@@ -82,7 +84,7 @@ $
 
 
 
-#### Aknowledgement
+#### Acknowledgement
 
 ![SUStech](pics/sustech.png)  ![IBM](pics/IBM.png) ![NTU](pics/NTU.png) 
 
