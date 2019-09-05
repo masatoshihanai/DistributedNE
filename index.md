@@ -4,18 +4,17 @@ __*Distributed Neighbor Expansion (Distributed NE)*__ : A scalable parallel and 
 
 - __Low-memory and high-performance implementation__
 - __Provide high-quality edge partitionins__
+- __Scalablable to trillion-edge graphs on 200+ machines__
 
-- __Scalablable to trillion-edge graphs on 200+ Machines__
+The algorithm is based on  _parallel expansion_, where the edge parts are greedily expanded in parallel in such way that the increase of vertex-cuts in each part becomes the local minimum as the figure. 
 
-The algorithm is based on  _parallel expansion_, where the edge parts are greedily expanded in parallel in such way that the increase of vertex-cuts in each part becomes locally minimal as the figure. 
+![expansion](pics/ParallelExpansion.png)
 
-![expansion](pics/ParallelExpansion.png)    
+*Reference*    
 
-### Reference.
+> M. Hanai, et.al. *"Distributed Edge Partitioning for Trillion-edge Graphs"* (PVLDB 2020, [Paper](https://arxiv.org/pdf/1908.05855.pdf))
 
-M. Hanai, et.al. *"Distributed Edge Partitioning for Trillion-edge Graphs"* (PVLDB 2020, [Paper](https://arxiv.org/pdf/1908.05855.pdf))
-
-## Quick Start
+## Quick Start {#q-start} 
 
  (Require `MPI` and `C/C++` )
 
@@ -26,9 +25,18 @@ $ cmake ..; make
 $ mpirun -n 4 ./DistributedNE ../data/LJ.edges 4
 ```
 
+
+
+## Outline of the Page
+
+1. [__How to compile__](#compile)
+2. [__How to Run__](#run)
+3. [__Graph Data format__](#data)
+4. [__Acknowledgement / Contact__](#ack)
+
 ---
 
-### How to compile
+### 1. How to compile {#compile}
 
 First, prepare the standard development tools for C/C++ on MPI
 
@@ -36,7 +44,7 @@ __Requirements__: `MPI` `C++`  `Make` `CMake` `Git`
 
 - __MPI__ : [OpenMPI](https://www.open-mpi.org/) , [MPICH](https://www.mpich.org/)
 - __C++ compiler__: [GCC](https://gcc.gnu.org/install/), [IntelC++](https://software.intel.com/en-us/c-compilers), [Clang/LLVM](https://clang.llvm.org/index.html)
-- [Make](https://www.gnu.org/software/make/), [CMake](https://cmake.org/) [Git](https://git-scm.com/)
+- [Make](https://www.gnu.org/software/make/), [CMake](https://cmake.org/), [Git](https://git-scm.com/)
 
 Next, get the code from github.
 
@@ -68,7 +76,7 @@ We have successed to compile & run the program in these environments:
 - Compiler: `GCC 5.4`
 - OS: `Red Hat Server 6.9`
 
-### How to Run Tools
+### 2. How to Run Tools {#run}
 
 ```bash
 $
@@ -76,7 +84,7 @@ $
 
 
 
-### Supported data format
+### 3. Supported data format {#data}
 
 ``` bash
 $
@@ -84,7 +92,7 @@ $
 
 
 
-#### Acknowledgement
+### 4. Acknowledgement {#ack}
 
 ![SUStech](pics/sustech.png)  ![IBM](pics/IBM.png) ![NTU](pics/NTU.png) 
 
