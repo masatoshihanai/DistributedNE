@@ -6,7 +6,7 @@ __*Distributed Neighbor Expansion (Distributed NE)*__ : A scalable parallel and 
 
 - __Low-memory and high-performance implementation__
 - __Provide high-quality edge partitionins__
-- __Scalablable to trillion-edge graphs on 200+ machines__ (1 trillion = 1,000,000,000,000)
+- __Scalable to trillion-edge graphs on 200+ machines__ (1 trillion = 1,000,000,000,000)
 
 ![expansion](data/ParallelExpansion.png)
 
