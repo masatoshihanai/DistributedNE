@@ -3,6 +3,7 @@ build*
 lib/
 .idea*
 *.org
+*.pedges
 src/other/
 src/tools/
 .DS_Store
