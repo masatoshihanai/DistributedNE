@@ -93,7 +93,7 @@ We have successed to compile and run the program in these environments:
 
 ```bash
 Usage: 
-  $ mpirun -n <# process> ./DistributedNE [option] <graph-file> <# partition> 
+  $ mpirun -n <\# process> ./DistributedNE [option] <graph-file> <\# partition> 
 ```
 
 The program uses `MPI` to execute on the distribtued environment. Thus, for example, if you want to partition `../data/Slashdot.edges` into 4 parts on 4 MPI processes,  the command is as follows:
@@ -127,7 +127,7 @@ Distributed NE: A Scalable Parallel and Distributed Graph Edge Partitioner
 ==========================================================================
 
 Usage: 
-  $ mpirun -n <# process> ./DistributedNE [option] <graph-file> <# partition> 
+  $ mpirun -n <\# process> ./DistributedNE [option] <graph-file> <\# partition> 
 
 Options:
   -h: Help 
