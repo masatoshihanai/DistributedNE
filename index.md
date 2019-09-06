@@ -18,7 +18,7 @@ The algorithm is based on  _parallel expansion_, where the edge parts are greedi
 
 ```bash
 $ git clone git@github.com:masatoshihanai/DistributedNE.git
-$ cd DistributedNE; mkdir build; cd builds
+$ cd DistributedNE; mkdir build; cd build
 $ cmake ..; make ## Require MPI 
 $ mpirun -n 4 ./DistributedNE ../data/Slashdot.edges 4
 ```
