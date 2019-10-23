@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(ParaEdgePartition)
-
+project(DistributedNE)
 
 set(CMAKE_CXX_COMPILER mpic++)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O3 -D_GLIBCXX_PARALLEL -fopenmp")
